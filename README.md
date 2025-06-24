@@ -1,7 +1,16 @@
 # DriveMRP: Enhancing Vision-Language Models with Synthetic Motion Data for Motion Risk Prediction
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-> **NeurIPS 2025 Anonymous Submission**
+
+> **NeurIPS 2025 Submission**
+
+## 👥 Authors
+**Zhiyi Hou**<sup>1,3</sup>, **Enhui Ma**<sup>1,2</sup>, **Fang Li**<sup>3</sup>, Zhiyi Lai<sup>3</sup>, Kalok Ho<sup>3</sup>, Zhanqian Wu<sup>3</sup>,  
+Lijun Zhou<sup>3</sup>, Long Chen<sup>3</sup>, Chitian Sun<sup>3</sup>, **Haiyang Sun**<sup>3,✉</sup>, Bing Wang<sup>3</sup>,  
+Guang Chen<sup>3</sup>, Hangjun Ye<sup>3</sup>, Kaicheng Yu<sup>2</sup>
+
+<sup>1</sup>Zhejiang University, <sup>2</sup>Westlake University, <sup>3</sup>Xiaomi EV  
+<small>*Equal contribution between the first three authors. ✉Project leader</small>
 
 ![Method Overview](static/images/teaser_00.jpg)
 
@@ -50,27 +59,6 @@ By fine-tuning with DriveMRP-10K, our framework significantly improves motion ri
   2. Ego-vehicle perspective alignment
   3. Trajectory projection
 
-<!-- ## ⚙️ Installation
-
-```bash
-# Clone repository
-git clone https://github.com/yourusername/DriveMRP.git
-cd DriveMRP
-
-# Create conda environment
-conda create -n drivemrp python=3.10 -y
-conda activate drivemrp
-
-# Install PyTorch (select appropriate version for your hardware)
-pip install torch torchvision torchaudio
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Install additional vision-language dependencies
-pip install transformers accelerate einops timm
-``` -->
-
 ## 🗃️ Dataset Structure
 
 ```
@@ -99,49 +87,6 @@ DriveMRP-10K/
 2. Emergency acceleration 🚀
 3. Emergency braking ✋
 4. Illegal lane change ↔️
-
-<!-- ## 🚀 Usage -->
-
-<!-- ### Training DriveMRP-Agent
-```python
-from drivemrp import DriveMRPTrainer
-
-trainer = DriveMRPTrainer(
-    base_model="Qwen/Qwen2.5-VL-7B",
-    dataset_path="DriveMRP-10K",
-    projection_type="heatmap"
-)
-
-trainer.configure_training(
-    batch_size=8,
-    learning_rate=2e-5,
-    num_epochs=10
-)
-
-trainer.train()
-trainer.save_model("drive_mrp_agent")
-```
-
-### Inference with Trained Model
-```python
-from drivemrp import DriveMRPAgent
-
-# Initialize agent with trained weights
-agent = DriveMRPAgent.load_pretrained("drive_mrp_agent")
-
-# Prepare input data
-sample = {
-    "bev_image": "path/to/bev.png",
-    "front_view": "path/to/front_view.png",
-    "trajectory": [x0, y0, x1, y1, ...]  # Trajectory coordinates
-}
-
-# Run risk prediction
-risk_level, explanation = agent.predict_risk(sample)
-
-print(f"🚨 Risk Level: {risk_level}")
-print(f"💡 Explanation: {explanation}")
-``` -->
 
 ## 📊 Results
 
@@ -201,12 +146,13 @@ print(f"💡 Explanation: {explanation}")
 
 ## 📝 Citation
 ```bibtex
-@article{anonymous2025drivemrp,
-  title={DriveMRP: Enhancing Vision-Language Models with Synthetic Motion Data for Motion Risk Prediction},
-  author={Anonymous},
-  journal={Advances in Neural Information Processing Systems},
-  volume={38},
-  year={2025}
+@inproceedings{hou2025drivemrp,
+  title     = {DriveMRP: Enhancing Vision-Language Models with Synthetic Motion Data for Motion Risk Prediction},
+  author    = {Hou, Zhiyi and Ma, Enhui and Li, Fang and Lai, Zhiyi and Ho, Kalok and Wu, Zhanqian and Zhou, Lijun and Chen, Long and Sun, Chitian and Sun, Haiyang and Wang, Bing and Chen, Guang and Ye, Hangjun and Yu, Kaicheng},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2025},
+  note      = {Equal contribution between the first three authors. Haiyang Sun is the project leader.},
+  url       = {https://openreview.net/forum?id=anonymous_id}
 }
 ```
 
@@ -217,3 +163,4 @@ This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 
 - This project page template was adapted from the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template)
 - Built upon the [Qwen](https://github.com/QwenLM/Qwen) vision-language models
 - Dataset generated using the [nuPlan](https://www.nuscenes.org/nuplan) dataset
+- Research supported by Zhejiang University, Westlake University, and Xiaomi EV
